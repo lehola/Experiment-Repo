@@ -62,7 +62,7 @@ if choice == "Scissors" &&  ourChoice == "Paper"
          result = "its a tie!"
 
         else    
-             result = "You lose faggot!"
+             result = "You lose!"
 end
 
 puts "You chose #{choice} and we chose #{ourChoice} which means #{result}!"
