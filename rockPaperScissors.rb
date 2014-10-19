@@ -1,9 +1,10 @@
 
-#premade variables/arrays
+#premade variables/arrays/code blocks
 gameList = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+choice = "Rock"
+checkNotchoice = choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock"
 
-
-puts <<EOF 
+puts <<EOP
 \nWelcome to the game of Rock Paper Lizard Spock!
 the game is simple you choose either Rock, Paper, Lizard, Spock and I choose one to
 If we chosoe the same thing its a tie, other than that... see below
@@ -21,48 +22,61 @@ If we chosoe the same thing its a tie, other than that... see below
     ~Spock vaporizes rock
     ~Rock crushes scissors
 
-EOF
+EOP
 
-print "Please enter your choice: "
- choice = gets.chomp.capitalize
+
+
+begin 
+
+    print "Please enter your choice: "
+
+    if checkNotchoice
+        print "Invalid choice, please try again "
+             
+    end
+
+    choice = gets.chomp.capitalize
+
+end while checkNotchoice #user error handling, in case they don't enter a choice
 
 ourChoice = gameList[rand(gameList.length)]
 
+result = 
 if choice == "Scissors" &&  ourChoice == "Paper"
-    result = "You win!"
+    "You win!"
 
 	elsif choice == "Paper" &&  ourChoice == "Rock"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Rock" &&  ourChoice == "Lizard"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Lizard" &&  ourChoice == "Spock"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Spock" &&  ourChoice == "Scissors"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Scissors" &&  ourChoice == "Lizard"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Lizard" &&  ourChoice == "Paper"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Paper" &&  ourChoice == "Spock"
-        result = "You win!"
+        "You win!"
 
     elsif choice == "Spock" &&  ourChoice == "Rock"
-         result = "You win!"
+         "You win!"
 
     elsif choice == "Rock" &&  ourChoice == "Scissors"
-         result = "You win!"
+         "You win!"
 
     elsif  choice == ourChoice
-         result = "its a tie!"
+         "its a tie!"
 
         else    
-             result = "You lose!"
+             "You lose!"
 end
 
 puts "You chose #{choice} and we chose #{ourChoice} which means #{result}!"
