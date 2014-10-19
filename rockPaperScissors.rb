@@ -1,4 +1,3 @@
-
 #premade variables/arrays/code blocks
 gameList = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 choice = "Rock"
@@ -23,8 +22,6 @@ If we chosoe the same thing its a tie, other than that... see below
     ~Rock crushes scissors
 
 EOP
-
-
 
 begin 
 
