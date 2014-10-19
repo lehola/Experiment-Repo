@@ -1,7 +1,6 @@
 #premade variables/arrays/code blocks
 gameList = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 choice = "Rock"
-checkNotchoice = choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock"
 
 puts <<EOP
 \nWelcome to the game of Rock Paper Lizard Spock!
@@ -25,16 +24,15 @@ EOP
 
 begin 
 
-    print "Please enter your choice: "
-
-    if checkNotchoice
-        print "Invalid choice, please try again "
+    if choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock"
+        puts "\n~Invalid choice, please try again "
              
     end
 
+    print "Please enter your choice: "
     choice = gets.chomp.capitalize
 
-end while checkNotchoice #user error handling, in case they don't enter a choice
+end while choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock" #user error handling, in case they don't enter a choice
 
 ourChoice = gameList[rand(gameList.length)]
 
@@ -76,4 +74,4 @@ if choice == "Scissors" &&  ourChoice == "Paper"
              "You lose!"
 end
 
-puts "You chose #{choice} and we chose #{ourChoice} which means #{result}!"
+puts "\nYou chose #{choice} and we chose #{ourChoice} which means #{result}!"
