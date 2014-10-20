@@ -1,6 +1,6 @@
 #premade variables/arrays/code blocks
 gameList = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
-retrySentances = "That was a great game", "Sweet game", "Not bad of a game", "Awesome game"
+retrySentances = "That was a great game", "Sweet game", "Not bad of a game", "Awesome game", "Nice", "Pretty good game" 
 
 begin
 
@@ -88,12 +88,12 @@ EOP
             print generatedSen + ", play again(Yes/No)? :"
             choice = gets.chomp.capitalize
             
-             if choice != "Yes" && choice != "No"
+             if choice != "Yes" && choice != "No" && choice != "Quit" 
                puts "\n~Invalid choice, please try again \n"
                  
             end
 
-        end while choice != "Yes" && choice != "No"
+        end while choice != "Yes" && choice != "No" && choice != "Quit"
 
     end#End of unless quit statment, skips everything if user quits
 
