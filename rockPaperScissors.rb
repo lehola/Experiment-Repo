@@ -1,5 +1,5 @@
 #premade variables/arrays/code blocks
-gameList = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+gameList = %w{ Rock Paper Scissors Lizard Spock }
 retrySentances = "That was a great game", "Sweet game", "Not bad of a game", "Awesome game", "Nice", "Pretty good game" 
 
 begin
