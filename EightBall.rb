@@ -1,6 +1,5 @@
 class EightBall
  def main
-   
 		answersList = File.readlines("answersBase.txt")
 
 		puts "----------------------------------------"
