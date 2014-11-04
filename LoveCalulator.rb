@@ -4,7 +4,7 @@ class LoveCalulator
 	conbindNames = 0
 
 	puts <<EOP
-							WeLcOmE, to our LOVE calculator'
+							WeLcOmE, to our LOVE calculator
 							Simply type you and your waifus name
 							to see if its true love
 EOP
