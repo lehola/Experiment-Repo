@@ -21,28 +21,38 @@ begin
 	~Love Calulator(l)
 EOF
 
-print "\nplease, ener your choice: "
-userChoice = gets[0].chomp.downcase
+	print "\nplease, ener your choice: "
+	userChoice = gets[0].downcase
+		
+	if userChoice != 'q'
+		begin
 
-	case 
-		when userChoice == 'e'
-			GameEightBall.main
+		case 
+			when userChoice == 'e'
+				GameEightBall.main
 
-		when userChoice == 'r'
-			GameRockPaperScissors.main
+			when userChoice == 'r'
+				GameRockPaperScissors.main
 
-		when userChoice == 'h'
-			GameHeadsOrTails.main
+			when userChoice == 'h'
+				GameHeadsOrTails.main
 
-		when userChoice == 'l'
-			GameLoveCalulator.main
+			when userChoice == 'l'
+				GameLoveCalulator.main
 
-		when userChoice != 'q'
-			puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
+			when userChoice != 'q'
+				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
 
-	end #End of case statement
+		end #End of case statement
 
-    puts "----------------------------------------"
+		print "Would you like to play again (y)es, (q)uit?:"
+		redoChoice = gets[0].downcase
+
+		end while redoChoice != 'q' #End of do while loop
+
+	    puts "----------------------------------------"
+
+	  end
 
 end while userChoice != "q"
 
