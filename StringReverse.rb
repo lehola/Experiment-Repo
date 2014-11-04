@@ -1,4 +1,11 @@
-print "Please, enter your String: "
-word = gets.chomp.reverse.capitalize
+class StringReverse
+ def main
 
-puts "\nand your string in reverse is: #{word}" 
+ 	puts "----------------------------------------"
+	print "Please, enter your String "
+	word = gets.chomp.reverse.capitalize
+
+	puts "\nand your string in reverse is: #{word}" 
+
+ end
+end
