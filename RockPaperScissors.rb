@@ -3,8 +3,6 @@ class RockPaperScissors
     gameList = %w{ Rock Paper Scissors Lizard Spock }
     retrySentances = "That was a great game", "Sweet game", "Not bad of a game", "Awesome game", "Nice", "Pretty good game" 
 
-    begin
-
         choice = "Rock"
 
          puts <<EOP
@@ -24,81 +22,62 @@ class RockPaperScissors
             ~Paper disproves Spock
             ~Spock vaporizes rock
             ~Rock crushes scissors
-
-        -Reminder, you can type Quit anytime to exit-
 EOP
 
-        begin 
+   begin 
 
-            if choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock"
-                puts "\n~Invalid choice, please try again "
-                     
-            end
+        if choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock"
+            puts "\n~Invalid choice, please try again "
+                 
+        end
 
-            print "Please enter your choice: "
-            choice = gets.chomp.capitalize
+        print "Please enter your choice: "
+        choice = gets.chomp.capitalize
 
-        end while choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock" && choice != "Quit"  #user error handling, in case they don't enter a choice
+    end while choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock" #user error handling, in case they don't enter a choice
 
-        ourChoice = gameList[rand(gameList.length)]
+    ourChoice = gameList[rand(gameList.length)]
 
-        unless choice == "Quit"
+        result = 
+        if choice == ourChoice
+             "its a tie!"
 
-            result = 
-            if choice == ourChoice
-                 "its a tie!"
+            elsif choice == "Paper" &&  ourChoice == "Rock"
+                "You win!"
 
-                elsif choice == "Paper" &&  ourChoice == "Rock"
-                    "You win!"
+            elsif choice == "Rock" &&  ourChoice == "Lizard"
+                "You win!"
 
-                elsif choice == "Rock" &&  ourChoice == "Lizard"
-                    "You win!"
+            elsif choice == "Lizard" &&  ourChoice == "Spock"
+                "You win!"
 
-                elsif choice == "Lizard" &&  ourChoice == "Spock"
-                    "You win!"
+            elsif choice == "Spock" &&  ourChoice == "Scissors"
+                "You win!"
 
-                elsif choice == "Spock" &&  ourChoice == "Scissors"
-                    "You win!"
+            elsif choice == "Scissors" &&  ourChoice == "Lizard"
+                "You win!"
 
-                elsif choice == "Scissors" &&  ourChoice == "Lizard"
-                    "You win!"
+            elsif choice == "Lizard" &&  ourChoice == "Paper"
+                "You win!"
 
-                elsif choice == "Lizard" &&  ourChoice == "Paper"
-                    "You win!"
+            elsif choice == "Paper" &&  ourChoice == "Spock"
+                "You win!"
 
-                elsif choice == "Paper" &&  ourChoice == "Spock"
-                    "You win!"
+            elsif choice == "Spock" &&  ourChoice == "Rock"
+                "You win!"
 
-                elsif choice == "Spock" &&  ourChoice == "Rock"
-                    "You win!"
+            elsif choice == "Rock" &&  ourChoice == "Scissors"
+                "You win!"
 
-                elsif choice == "Rock" &&  ourChoice == "Scissors"
-                    "You win!"
+            elsif  choice == "Scissors" &&  ourChoice == "Paper"
+                "You win!"
 
-                elsif  choice == "Scissors" &&  ourChoice == "Paper"
-                    "You win!"
+                else    
+                     "You lose!"
+        end#End of if choice statement
 
-                    else    
-                         "You lose!"
-            end#End of if choice statement
-
-                puts "\nYou chose #{choice} and we chose #{ourChoice} which means #{result}!\n"
-                   generatedSen = retrySentances[rand(retrySentances.length)]
-         
-            begin
-                print generatedSen + ", play again(Yes/No)? :"
-                choice = gets.chomp.capitalize
-                
-                 if choice != "Yes" && choice != "No" && choice != "Quit" 
-                   puts "\n~Invalid choice, please try again \n"
-                     
-                end
-
-            end while choice != "Yes" && choice != "No" && choice != "Quit"
-
-        end#End of unless quit statment, skips everything if user quits
-
-    end while choice!= "No" && choice != "Quit"
-
+            puts "\nYou chose #{choice} and we chose #{ourChoice} which means #{result}!\n"
+               generatedSen = retrySentances[rand(retrySentances.length)]
+            
  end 
 end
