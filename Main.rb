@@ -10,6 +10,7 @@ GameRockPaperScissors = RockPaperScissors.new
 GameHeadsOrTails = HeadsOrTails.new
 GameLoveCalulator = LoveCalulator.new
 GameStringReverse = StringReverse.new
+wrongChoice = false
 
 begin
 	puts <<EOF
@@ -49,12 +50,18 @@ EOF
 
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
+				wrongChoice = true
 
 		end #End of case statement
 
+		if wrongChoice == false
+			print "Would you like to play again (y)es, (q)uit?:"
+			redoChoice = gets[0].downcase
 
-		print "Would you like to play again (y)es, (q)uit?:"
-		redoChoice = gets[0].downcase
+			else 
+				redoChoice = 'q'
+				wrongChoice = true
+		end#End of if statement
 
 		end while redoChoice != 'q' #End of do while loop
 
