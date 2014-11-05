@@ -4,7 +4,7 @@ require_relative "HeadsOrTails.rb"
 require_relative "LoveCalulator.rb"
 require_relative "StringReverse.rb"
 
-retrySentances = "That was a great game", "Sweet game", "Not bad of a game", "Awesome game", "Nice", "Pretty good game" 
+retrySentances = "I don't know about you but I had a rather good time!", "Sweet game", "Not bad, be sure to come back again!", "Haha, man that was a good time!", "Nice, see-yeah", "That was swell!" 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
 GameHeadsOrTails = HeadsOrTails.new
@@ -60,7 +60,8 @@ EOF
 
 			else 
 				redoChoice = 'q'
-				wrongChoice = true
+				wrongChoice = false
+
 		end#End of if statement
 
 		end while redoChoice != 'q' #End of do while loop
@@ -71,4 +72,5 @@ EOF
 
 end while userChoice != "q"
 
-puts "You done here"
+puts "You done here. #{retrySentances.sample}"
+puts "----------------------------------------"
