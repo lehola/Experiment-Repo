@@ -3,13 +3,14 @@ require_relative "RockPaperScissors.rb"
 require_relative "HeadsOrTails.rb"
 require_relative "LoveCalulator.rb"
 require_relative "StringReverse.rb"
+require_relative "NameGenerator.rb"
 
-retrySentances = "I don't know about you but I had a rather good time!", "Sweet game", "Not bad, be sure to come back again!", "Haha, man that was a good time!", "Nice, see-yeah", "That was swell!" 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
 GameHeadsOrTails = HeadsOrTails.new
 GameLoveCalulator = LoveCalulator.new
 GameStringReverse = StringReverse.new
+GameNameGenerator = NameGenerator.new
 wrongChoice = false
 
 begin
@@ -18,11 +19,12 @@ begin
 	~~~~~~~~~~~~~~~ Welcome ~~~~~~~~~~~~~~~
 	Which game would you like to play?
 	We have
-	~eight ball(e)
+	~Eight ball(e)
 	~Rock paper scissors spock(r)
 	~Heads or tails(h)
 	~Love Calulator(l)
 	~String Reverser(s)
+	~Name Generator(n)
 EOF
 
 	print "\nplease, ener your choice: "
@@ -48,6 +50,9 @@ EOF
 			when userChoice == 's'
 				GameStringReverse.main
 
+			when userChoice == 'n'
+				GameNameGenerator.main
+
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
 				wrongChoice = true
@@ -72,5 +77,6 @@ EOF
 
 end while userChoice != "q"
 
-puts "You done here. #{retrySentances.sample}"
+
+puts "You done here. #{ (File.readlines("quoteBase.txt").sample) }"
 puts "----------------------------------------"
