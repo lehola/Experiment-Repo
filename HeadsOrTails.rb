@@ -1,8 +1,6 @@
 class HeadsOrTails
  def main	
 
- 	puts "----------------------------------------"
-
 	randomNumber = rand(2)
 
 	if (randomNumber == 0)

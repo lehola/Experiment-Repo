@@ -21,11 +21,9 @@ class NameGenerator
 	nameList.map! {|x| x.chomp }
 
 puts <<EOP
- ----------------------------------------
 \nWelcome! Below you can see the naem we randomly Generated for you.
 Note: you can always add more names to the random name list by editing the nameBase.txt file
-\n~Your name is: #{nameList[randomFirstWord]} #{nameList[randomSecondWord]}
----------------------------------------- 
+\n~Your name is: #{nameList[randomFirstWord].chomp} #{nameList[randomSecondWord]}
 EOP
 
  end

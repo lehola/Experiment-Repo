@@ -4,6 +4,7 @@ require_relative "HeadsOrTails.rb"
 require_relative "LoveCalulator.rb"
 require_relative "StringReverse.rb"
 require_relative "NameGenerator.rb"
+require_relative "PassGenerator.rb"
 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
@@ -11,6 +12,7 @@ GameHeadsOrTails = HeadsOrTails.new
 GameLoveCalulator = LoveCalulator.new
 GameStringReverse = StringReverse.new
 GameNameGenerator = NameGenerator.new
+GamePassGenerator = PassGenerator.new
 wrongChoice = false
 
 begin
@@ -25,6 +27,7 @@ begin
 	~Love Calulator(l)
 	~String Reverser(s)
 	~Name Generator(n)
+	~Password Generator(p)
 EOF
 
 	print "\nplease, ener your choice: "
@@ -33,7 +36,7 @@ EOF
 	if userChoice != 'q'
 
 		begin
-
+		puts "----------------------------------------"
 		case 
 			when userChoice == 'e'
 				GameEightBall.main
@@ -53,11 +56,15 @@ EOF
 			when userChoice == 'n'
 				GameNameGenerator.main
 
+			when userChoice == 'p'
+				GamePassGenerator.main
+
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
 				wrongChoice = true
 
 		end #End of case statement
+		puts "----------------------------------------"
 
 		if wrongChoice == false
 			print "Would you like to play again (y)es, (q)uit?:"
@@ -71,12 +78,10 @@ EOF
 
 		end while redoChoice != 'q' #End of do while loop
 
-	    puts "----------------------------------------"
-
 	  end
 
 end while userChoice != "q"
 
 
 puts "You done here. #{ (File.readlines("quoteBase.txt").sample) }"
-puts "----------------------------------------"
+puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
