@@ -28,6 +28,7 @@ begin
 	~String Reverser(s)
 	~Name Generator(n)
 	~Password Generator(p)
+	or to exit type (q)uit
 EOF
 
 	print "\nplease, ener your choice: "
