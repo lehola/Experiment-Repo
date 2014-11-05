@@ -1,76 +1,83 @@
-require_relative "EightBall.rb"
-require_relative "RockPaperScissors.rb"
-require_relative "HeadsOrTails.rb"
-require_relative "LoveCalulator.rb"
-require_relative "StringReverse.rb"
+class RockPaperScissors
+ def main#premade variables/arrays/code blocks
+    gameList = %w{ Rock Paper Scissors Lizard Spock }
+    retrySentances = "That was a great game", "Sweet game", "Not bad of a game", "Awesome game", "Nice", "Pretty good game" 
 
-retrySentances = "I don't know about you but I had a rather good time!", "Sweet game", "Not bad, be sure to come back again!", "Haha, man that was a good time!", "Nice, see-yeah", "That was swell!" 
-GameEightBall = EightBall.new
-GameRockPaperScissors = RockPaperScissors.new
-GameHeadsOrTails = HeadsOrTails.new
-GameLoveCalulator = LoveCalulator.new
-GameStringReverse = StringReverse.new
-wrongChoice = false
+        choice = "Rock"
 
-begin
-	puts <<EOF
-	\n
-	~~~~~~~~~~~~~~~ Welcome ~~~~~~~~~~~~~~~
-	Which game would you like to play?
-	We have
-	~eight ball(e)
-	~Rock paper scissors spock(r)
-	~Heads or tails(h)
-	~Love Calulator(l)
-	~String Reverser(s)
-EOF
+         puts <<EOP
+        \nWelcome to the game of Rock Paper Lizard Spock!
+        the game is simple you choose either Rock, Paper, Lizard, Spock and I choose one to
+        If we chosoe the same thing its a tie, other than that... see below
 
-	print "\nplease, ener your choice: "
-	userChoice = gets[0].downcase
-		
-	if userChoice != 'q'
+            ~Scissors cut paper
+            ~Paper covers rock
+            ~Rock crushes lizard
 
-		begin
+            ~Lizard poisons Spock
+            ~Spock smashes scissors
+            ~Scissors decapitate lizard
+            ~Lizard eats paper
 
-		case 
-			when userChoice == 'e'
-				GameEightBall.main
+            ~Paper disproves Spock
+            ~Spock vaporizes rock
+            ~Rock crushes scissors
+EOP
 
-			when userChoice == 'r'
-				GameRockPaperScissors.main
+   begin 
 
-			when userChoice == 'h'
-				GameHeadsOrTails.main
+        if choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock"
+            puts "\n~Invalid choice, please try again "
+                 
+        end
 
-			when userChoice == 'l'
-				GameLoveCalulator.main
+        print "Please enter your choice: "
+        choice = gets.chomp.capitalize
 
-			when userChoice == 's'
-				GameStringReverse.main
+    end while choice != "Rock" && choice != "Paper" &&  choice != "Scissors" && choice != "Lizard" &&  choice != "Spock" #user error handling, in case they don't enter a choice
 
-			when userChoice != 'q'
-				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
-				wrongChoice = true
+    ourChoice = gameList[rand(gameList.length)]
 
-		end #End of case statement
+        result = 
+        if choice == ourChoice
+             "its a tie!"
 
-		if wrongChoice == false
-			print "Would you like to play again (y)es, (q)uit?:"
-			redoChoice = gets[0].downcase
+            elsif choice == "Paper" &&  ourChoice == "Rock"
+                "You win!"
 
-			else 
-				redoChoice = 'q'
-				wrongChoice = false
+            elsif choice == "Rock" &&  ourChoice == "Lizard"
+                "You win!"
 
-		end#End of if statement
+            elsif choice == "Lizard" &&  ourChoice == "Spock"
+                "You win!"
 
-		end while redoChoice != 'q' #End of do while loop
+            elsif choice == "Spock" &&  ourChoice == "Scissors"
+                "You win!"
 
-	    puts "----------------------------------------"
+            elsif choice == "Scissors" &&  ourChoice == "Lizard"
+                "You win!"
 
-	  end
+            elsif choice == "Lizard" &&  ourChoice == "Paper"
+                "You win!"
 
-end while userChoice != "q"
+            elsif choice == "Paper" &&  ourChoice == "Spock"
+                "You win!"
 
-puts "You done here. #{retrySentances.sample}"
-puts "----------------------------------------"
+            elsif choice == "Spock" &&  ourChoice == "Rock"
+                "You win!"
+
+            elsif choice == "Rock" &&  ourChoice == "Scissors"
+                "You win!"
+
+            elsif  choice == "Scissors" &&  ourChoice == "Paper"
+                "You win!"
+
+                else    
+                     "You lose!"
+        end#End of if choice statement
+
+            puts "\nYou chose #{choice} and we chose #{ourChoice} which means #{result}!\n"
+               generatedSen = retrySentances[rand(retrySentances.length)]
+            
+ end 
+end
