@@ -37,10 +37,10 @@ begin
 	~BMI Calculator(b)
 	~Temperature Converter(t)
 	~Decimal to Binary Converter(d)
-	or to exit type (q)uit
+	or to exit type quit(q)
 EOF
 
-	print "\nplease, ener your choice: "
+	print "\nplease, enter your choice: "
 	userChoice = gets[0].downcase
 		
 	if userChoice != 'q'
