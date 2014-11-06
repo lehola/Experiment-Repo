@@ -7,6 +7,7 @@ require_relative "NameGenerator.rb"
 require_relative "PassGenerator.rb"
 require_relative "BmiCalulator.rb"
 require_relative "TemperatureCalc.rb"
+require_relative "DecToBin.rb"
 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
@@ -17,6 +18,7 @@ GameNameGenerator = NameGenerator.new
 GamePassGenerator = PassGenerator.new
 GameBMI = BmiCalulator.new
 GameTemperatureCalc = TemperatureCalc.new
+GameDecToBin = DecToBin.new
 wrongChoice = false
 
 begin
@@ -33,6 +35,8 @@ begin
 	~Name Generator(n)
 	~Password Generator(p)
 	~BMI Calculator(b)
+	~Temperature Converter(t)
+	~Decimal to Binary Converter(d)
 	or to exit type (q)uit
 EOF
 
@@ -70,6 +74,9 @@ EOF
 
 			when userChoice == 't'
 				GameTemperatureCalc.main
+
+			when userChoice == 'd'
+				GameDecToBin.main
 
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
