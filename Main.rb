@@ -5,6 +5,7 @@ require_relative "LoveCalulator.rb"
 require_relative "StringReverse.rb"
 require_relative "NameGenerator.rb"
 require_relative "PassGenerator.rb"
+require_relative "BmiCalulator.rb"
 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
@@ -13,6 +14,7 @@ GameLoveCalulator = LoveCalulator.new
 GameStringReverse = StringReverse.new
 GameNameGenerator = NameGenerator.new
 GamePassGenerator = PassGenerator.new
+GameBMI = BmiCalulator.new
 wrongChoice = false
 
 begin
@@ -28,6 +30,7 @@ begin
 	~String Reverser(s)
 	~Name Generator(n)
 	~Password Generator(p)
+	~BMI Calculator(b)
 	or to exit type (q)uit
 EOF
 
@@ -59,6 +62,9 @@ EOF
 
 			when userChoice == 'p'
 				GamePassGenerator.main
+
+			when userChoice == 'b'
+				GameBMI.main
 
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
