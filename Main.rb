@@ -6,6 +6,7 @@ require_relative "StringReverse.rb"
 require_relative "NameGenerator.rb"
 require_relative "PassGenerator.rb"
 require_relative "BmiCalulator.rb"
+require_relative "TemperatureCalc.rb"
 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
@@ -15,6 +16,7 @@ GameStringReverse = StringReverse.new
 GameNameGenerator = NameGenerator.new
 GamePassGenerator = PassGenerator.new
 GameBMI = BmiCalulator.new
+GameTemperatureCalc = TemperatureCalc.new
 wrongChoice = false
 
 begin
@@ -66,6 +68,9 @@ EOF
 			when userChoice == 'b'
 				GameBMI.main
 
+			when userChoice == 't'
+				GameTemperatureCalc.main
+
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
 				wrongChoice = true
@@ -88,7 +93,6 @@ EOF
 	  end
 
 end while userChoice != "q"
-
 
 puts "You done here. #{ (File.readlines("quoteBase.txt").sample) }"
 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
