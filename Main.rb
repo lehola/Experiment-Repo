@@ -8,6 +8,8 @@ require_relative "PassGenerator.rb"
 require_relative "BmiCalulator.rb"
 require_relative "TemperatureCalc.rb"
 require_relative "DecToBin.rb"
+require_relative "AreaCalc.rb"
+
 
 GameEightBall = EightBall.new
 GameRockPaperScissors = RockPaperScissors.new
@@ -19,6 +21,7 @@ GamePassGenerator = PassGenerator.new
 GameBMI = BmiCalulator.new
 GameTemperatureCalc = TemperatureCalc.new
 GameDecToBin = DecToBin.new
+GameAreaCalc = AreaCalc.new
 wrongChoice = false
 
 begin
@@ -37,6 +40,7 @@ begin
 	~BMI Calculator(b)
 	~Temperature Converter(t)
 	~Decimal to Binary Converter(d)
+	~Area of a square/rectangle calculator(a)
 	or to exit type quit(q)
 EOF
 
@@ -77,6 +81,9 @@ EOF
 
 			when userChoice == 'd'
 				GameDecToBin.main
+
+			when userChoice == 'a'
+				GameAreaCalc.main
 
 			when userChoice != 'q'
 				puts "*********$$$$* invalid, please enter from the list ******$$$$$****"	
